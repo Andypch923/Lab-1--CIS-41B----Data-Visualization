@@ -18,3 +18,6 @@ class temperature:
     '''getter for temperature dictionary'''            
     def getTempDict(self):
         return self.__TemperatureDict
+    '''getter for temperature list of namedtuples'''
+    def getTempData(self):
+        return self.__listOfTemperatureData

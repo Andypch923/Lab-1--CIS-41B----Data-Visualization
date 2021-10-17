@@ -16,7 +16,7 @@ def addApp():
     for widget in frame.winfo_children():
         widget.destroy()
 
-    filename =  filedialog.askopenfilename(initialdir="\Users\Andy\OneDrive\Documents\GitHub\Lab-1--CIS-41B----Data Visualization\src",title = "Select File", filetypes=(("executables","*.exe"),("all files","*.*")))
+    filename =  filedialog.askopenfilename(initialdir="/",title = "Select File", filetypes=(("executables","*.exe"),("all files","*.*")))
     apps.append(filename)
     print(filename)
     for app in apps:
@@ -26,6 +26,7 @@ def addApp():
 def runApps():
     for app in apps:
         os.startfile(app)
+        
 canvas = tk.Canvas(root, height = 700, width = 700, bg ="#263D42")
 canvas.pack()
 
