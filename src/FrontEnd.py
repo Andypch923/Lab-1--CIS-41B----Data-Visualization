@@ -1,7 +1,7 @@
 import myParser
 import temperature
 import tkinter as tk
-from tkinter import filedialog, Text
+from tkinter import Canvas, filedialog, Text
 import os
 '''
 parse raw data from html file and create container to store Temperature data
@@ -15,11 +15,12 @@ tempObj = temperature.temperature(rawParsedTemp.getRawData())
 root = tk.Tk()
 apps = []
 
-canvas = tk.Canvas(root, height="1080", width = "1900", bg = "white")
+canvas = tk.Canvas(root, height = 700, width = 700, bg ="#263D42")
 canvas.pack()
 
-frame = tk.Frame(canvas, bg= "#009900")
-frame.place(relheight = 0.93, relwidth = 0.95, relx=0.025,rely=0.03)
-frame.pack()
+frame = tk.Frame(root, bg = "white")
+frame.place(relwidth=0.8, relheight =0.8,relx = 0.1, rely=0.1)
+
+
 
 root.mainloop()
