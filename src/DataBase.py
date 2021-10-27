@@ -20,6 +20,9 @@ class DataBase:
                 upper FLOAT,
                 lower FLOAT
             )""")
+        file_object = open("table.txt",'a')
+        file_object.write("TableCreated")
+        file_object.close()
     #parse list of temp items into table
         cursor.executemany("INSERT INTO temperatureTable VALUES(?,?,?,?)",tempObj)
     #commits commands
@@ -34,7 +37,7 @@ class DataBase:
         cursor =  conn.cursor()
 
         cursor.execute("SELECT year FROM temperatureTable")
-        items = cursor.fetchall()
+        items = [ x[0] for x in cursor.fetchall()]
 
         return items
 
@@ -45,8 +48,7 @@ class DataBase:
         cursor =  conn.cursor()
 
         cursor.execute("SELECT median FROM temperatureTable")
-        items = cursor.fetchall()
-
+        items = [ x[0] for x in cursor.fetchall()]
         return items
 
     def insert(tempObj):

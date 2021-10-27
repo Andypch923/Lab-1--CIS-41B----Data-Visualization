@@ -21,7 +21,11 @@ co2Obj = co2.co2(rawParsedCo2.getRawData())
 slopeObj = slope.slope(co2Obj.getCo2Dict(),tempObj.getTempDict())
 
 dataBaseObj = DataBase.DataBase()
-dataBaseObj.createTable(tempObj.getTempData())
+f = open("table.txt","a+")
+f.seek(0)
+if (f.read() == ""):
+    f.close()
+    dataBaseObj.createTable(tempObj.getTempData())
 
 root = tk.Tk()
 root.title('Temperature Differential GUI')
