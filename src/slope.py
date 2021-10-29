@@ -5,7 +5,7 @@ import temperature
 import math
 class slope:
     graphDataItem = namedtuple('graphDataItem',['year','x','y'])
-    __graphData = list()
+    __graphData = list()    
     '''constructor: create a list for the linear regreassion graph with Co2 value as the x value and y is the temperature
     for each year'''
     def __init__(self,co2Obj,tempObj):

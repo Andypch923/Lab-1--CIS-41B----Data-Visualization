@@ -37,7 +37,7 @@ class DataBase:
         cursor =  conn.cursor()
 
         cursor.execute("SELECT year FROM temperatureTable")
-        items = [ x[0] for x in cursor.fetchall()]
+        items = [ x[0] for x in cursor.fetchall()]  
 
         return items
 
